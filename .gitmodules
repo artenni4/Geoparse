@@ -1,0 +1,3 @@
+[submodule "lib/Simplexer"]
+	path = lib/Simplexer
+	url = https://github.com/artenni4/Simplexer.git
