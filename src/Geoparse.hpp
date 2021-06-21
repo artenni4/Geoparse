@@ -8,14 +8,6 @@
 
 namespace Geoparse {
 
-	// Main interface to Geoparse
-	class Parser {
-	public:
-		void parse(const std::list<Simplexer::Token>&);
-		void debugPrint();
-	};
-
-
 	// Base class for all language constructions
 	class ASTExpression {
 
@@ -49,4 +41,15 @@ namespace Geoparse {
 	class Variable : public ASTExpression {
 		std::unique_ptr<GeoObject> m_ref;
 	};
+
+	// Main interface to Geoparse
+	class Parser {
+	private:
+		std::list<Simplexer::Token>::const_iterator m_currToken;
+
+	public:
+		void parse(const std::list<Simplexer::Token>&);
+		void debugPrint();
+	};
+
 }

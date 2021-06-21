@@ -11,12 +11,13 @@ int main(int argc, char** argv) {
 	}
 
 	std::list<Simplexer::Token> tokens;
-	for (Simplexer::Token token = lexer.next(); token.type != Simplexer::TokenType::END_OF_FILE; token = lexer.next()) {
+	for (Simplexer::Token& token = lexer.next(); token.type != Simplexer::TokenType::END_OF_FILE; token = lexer.next()) {
 		tokens.emplace_back(std::move(token));
 	}
 
 	Geoparse::Parser parser;
 	parser.parse(tokens);
+	parser.debugPrint();
 
 	return 0;
 }
