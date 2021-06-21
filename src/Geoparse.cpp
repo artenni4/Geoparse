@@ -1,9 +1,17 @@
 #include "Geoparse.hpp"
 
-#include <iostream>
-
 namespace Geoparse {
 
-	
+	// ============ PARSER FUNCTIONS ===============
+
+	void Parser::parse(const std::list<Simplexer::Token>& tokens)
+	{
+
+	}
+
+	void Parser::debugPrint()
+	{
+
+	}
 
 }
